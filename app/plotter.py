@@ -13,6 +13,10 @@ def plot_finger_load_comparison_horizontal(finger_loads, layout_names):
     finger_loads = [finger_loads[jcuken_index]] + [finger_loads[i] for i in range(len(finger_loads)) if i != jcuken_index]
     layout_names = [layout_names[jcuken_index]] + [layout_names[i] for i in range(len(layout_names)) if i != jcuken_index]
     
+    # Реверсируем списки
+    finger_loads.reverse()
+    layout_names.reverse()
+    
     num_layouts = len(finger_loads)
     fingers = list(finger_loads[0].keys())  # Список пальцев
     y_positions = range(len(fingers))  # Позиции для пальцев
